@@ -96,7 +96,7 @@ const Compare = () => {
                 </Select>
               </div>
               <div className="aspect-video rounded-lg overflow-hidden bg-muted mb-4">
-                <img src={tank1.image} alt={tank1.name} className="w-full h-full object-cover" />
+                <img src={tank1.image} alt={tank1.name} className="w-full h-full object-fill rounded-[0.25rem]" />
               </div>
               <h3 className="text-2xl font-bold mb-1">{tank1.name}</h3>
               <p className="text-sm text-muted-foreground mb-2">{tank1.fullName}</p>
