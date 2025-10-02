@@ -3,8 +3,9 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { tanks } from "@/data/tanks";
+import { sovietTanks as tanks } from "@/data/soviet-tanks";
 import { designers } from "@/data/designers";
+import { periods } from "@/data/periods";
 import {
   Sheet,
   SheetContent,
@@ -29,8 +30,7 @@ const Index = () => {
     navigate(`/?section=${section}`, { replace: true });
   };
 
-  const sovietTanks = tanks.filter(t => t.country === "СССР" || t.country === "Россия");
-  const westernTanks = tanks.filter(t => t.country !== "СССР" && t.country !== "Россия");
+  const allTanks = tanks;
 
   return (
     <div className="min-h-screen bg-background">
@@ -181,43 +181,20 @@ const Index = () => {
         <section className="container mx-auto px-4 py-16">
           <h2 className="text-4xl font-bold mb-8">История развития танкостроения</h2>
           <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { 
-                period: "1920-1940", 
-                title: "Становление", 
-                desc: "МС-1, Т-26, БТ, Т-34 — создание советской школы танкостроения. Первые опыты, заимствование западных технологий и переход к собственным разработкам." 
-              },
-              { 
-                period: "1940-1945", 
-                title: "Великая Отечественная", 
-                desc: "Т-34, КВ, ИС — легендарные машины войны. Массовое производство, эвакуация заводов на Урал, создание лучших танков Второй мировой войны." 
-              },
-              { 
-                period: "1945-1970", 
-                title: "Холодная война", 
-                desc: "Т-54/55, Т-62 — массовое производство и экспорт. Создание самого массового танка в истории, широкое распространение советской бронетехники по всему миру." 
-              },
-              { 
-                period: "1970-1991", 
-                title: "Новое поколение", 
-                desc: "Т-64, Т-72, Т-80 — революция в танкостроении. Композитная броня, автомат заряжания, газотурбинные двигатели, управляемое вооружение." 
-              },
-              { 
-                period: "1991-2010", 
-                title: "Постсоветский период", 
-                desc: "Т-90 и модернизации — сохранение технологий. Глубокая модернизация существующих танков, экспорт, создание Т-90 как развитие Т-72." 
-              },
-              { 
-                period: "2010-наст.вр.", 
-                title: "Современность", 
-                desc: "Т-14 Армата — танк будущего. Необитаемая башня, активная защита, универсальная платформа, цифровизация боевых систем." 
-              }
-            ].map((era, i) => (
-              <Card key={i} className="hover:shadow-lg transition-shadow">
+            {periods.map((period) => (
+              <Card 
+                key={period.id} 
+                className="hover:shadow-lg transition-shadow cursor-pointer group"
+                onClick={() => navigate(`/period/${period.id}`)}
+              >
                 <CardContent className="p-6">
-                  <div className="text-accent font-mono text-sm mb-2">{era.period}</div>
-                  <h3 className="text-xl font-bold mb-2">{era.title}</h3>
-                  <p className="text-muted-foreground text-sm">{era.desc}</p>
+                  <div className="text-accent font-mono text-sm mb-2">{period.years}</div>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-accent transition-colors">{period.title}</h3>
+                  <p className="text-muted-foreground text-sm">{period.shortDesc}</p>
+                  <div className="mt-4 flex items-center text-sm text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span>Подробнее</span>
+                    <Icon name="ArrowRight" size={16} className="ml-2" />
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -227,82 +204,37 @@ const Index = () => {
 
       {activeSection === "models" && (
         <section className="container mx-auto px-4 py-16">
-          <h2 className="text-4xl font-bold mb-8">Каталог моделей</h2>
-          
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <Icon name="Flag" className="text-accent" size={24} />
-              Советские и российские танки
-            </h3>
-            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {sovietTanks.map((tank) => (
-                <Card 
-                  key={tank.id} 
-                  className="overflow-hidden group hover:shadow-xl transition-all cursor-pointer"
-                  onClick={() => navigate(`/tank/${tank.id}`)}
-                >
-                  <div className="aspect-video bg-muted overflow-hidden">
-                    <img 
-                      src={tank.image} 
-                      alt={tank.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+          <h2 className="text-4xl font-bold mb-8">Советские и российские танки</h2>
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {allTanks.map((tank) => (
+              <Card 
+                key={tank.id} 
+                className="overflow-hidden group hover:shadow-xl transition-all cursor-pointer"
+                onClick={() => navigate(`/tank/${tank.id}`)}
+              >
+                <div className="aspect-video bg-muted overflow-hidden">
+                  <img 
+                    src={tank.image} 
+                    alt={tank.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <CardContent className="p-4">
+                  <div className="flex items-start justify-between mb-2">
+                    <div>
+                      <h3 className="text-xl font-bold">{tank.name}</h3>
+                      <p className="text-muted-foreground font-mono text-xs">{tank.year}</p>
+                    </div>
+                    <Icon name="ArrowRight" className="text-accent opacity-0 group-hover:opacity-100 transition-opacity" size={20} />
                   </div>
-                  <CardContent className="p-4">
-                    <div className="flex items-start justify-between mb-2">
-                      <div>
-                        <h3 className="text-xl font-bold">{tank.name}</h3>
-                        <p className="text-muted-foreground font-mono text-xs">{tank.year}</p>
-                      </div>
-                      <Icon name="ArrowRight" className="text-accent opacity-0 group-hover:opacity-100 transition-opacity" size={20} />
-                    </div>
-                    <p className="text-xs text-muted-foreground mb-2">{tank.type}</p>
-                    <div className="flex gap-1 text-xs font-mono">
-                      <span className="px-2 py-1 bg-muted rounded">{tank.specs.weight}</span>
-                      <span className="px-2 py-1 bg-muted rounded">{tank.specs.speed}</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <Icon name="Globe" className="text-accent" size={24} />
-              Западные танки
-            </h3>
-            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {westernTanks.map((tank) => (
-                <Card 
-                  key={tank.id} 
-                  className="overflow-hidden group hover:shadow-xl transition-all cursor-pointer"
-                  onClick={() => navigate(`/tank/${tank.id}`)}
-                >
-                  <div className="aspect-video bg-muted overflow-hidden">
-                    <img 
-                      src={tank.image} 
-                      alt={tank.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
+                  <p className="text-xs text-muted-foreground mb-2">{tank.type}</p>
+                  <div className="flex gap-1 text-xs font-mono">
+                    <span className="px-2 py-1 bg-muted rounded">{tank.specs.weight}</span>
+                    <span className="px-2 py-1 bg-muted rounded">{tank.specs.speed}</span>
                   </div>
-                  <CardContent className="p-4">
-                    <div className="flex items-start justify-between mb-2">
-                      <div>
-                        <h3 className="text-xl font-bold">{tank.name}</h3>
-                        <p className="text-muted-foreground font-mono text-xs">{tank.country}, {tank.year}</p>
-                      </div>
-                      <Icon name="ArrowRight" className="text-accent opacity-0 group-hover:opacity-100 transition-opacity" size={20} />
-                    </div>
-                    <p className="text-xs text-muted-foreground mb-2">{tank.type}</p>
-                    <div className="flex gap-1 text-xs font-mono">
-                      <span className="px-2 py-1 bg-muted rounded">{tank.specs.weight}</span>
-                      <span className="px-2 py-1 bg-muted rounded">{tank.specs.speed}</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </section>
       )}
