@@ -28,7 +28,7 @@ export const sovietTanks: Tank[] = [
     year: "1927",
     country: "СССР",
     type: "Лёгкий танк",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/T-18_Kubinka.jpg/1280px-T-18_Kubinka.jpg",
+    image: "/img/e89f5f0b-a75d-4918-96cc-a69b300caf00.jpg",
     specs: {
       weight: "5.9 т",
       crew: "2 человека",
@@ -49,7 +49,7 @@ export const sovietTanks: Tank[] = [
     year: "1931",
     country: "СССР",
     type: "Лёгкий танк",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/T-26_Model_1933.jpg/1280px-T-26_Model_1933.jpg",
+    image: "/img/24b22ffe-19f7-4e39-817e-724e23041189.jpg",
     specs: {
       weight: "10.3 т",
       crew: "3 человека",
@@ -70,7 +70,7 @@ export const sovietTanks: Tank[] = [
     year: "1935",
     country: "СССР",
     type: "Лёгкий танк",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/BT-7-1_Parola_Tank_Museum.jpg/1280px-BT-7-1_Parola_Tank_Museum.jpg",
+    image: "/img/a70d1be6-af9d-43a2-8f6e-e397a017eb2c.jpg",
     specs: {
       weight: "14.7 т",
       crew: "3 человека",
@@ -91,7 +91,7 @@ export const sovietTanks: Tank[] = [
     year: "1940",
     country: "СССР",
     type: "Средний танк",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/T-34-85_Saumur.0001bws2.jpg/1280px-T-34-85_Saumur.0001bws2.jpg",
+    image: "/img/27fcf584-33c1-4ae6-adf9-cea49d3d3b90.jpg",
     specs: {
       weight: "26.5 т",
       crew: "4 человека",
@@ -112,7 +112,7 @@ export const sovietTanks: Tank[] = [
     year: "1944",
     country: "СССР",
     type: "Средний танк",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/T-34-85_-_Patriot_Museum%2C_Kubinka_%2837609887045%29.jpg/1280px-T-34-85_-_Patriot_Museum%2C_Kubinka_%2837609887045%29.jpg",
+    image: "/img/89c1a483-d9eb-451e-86b1-077a8cea4d44.jpg",
     specs: {
       weight: "32 т",
       crew: "5 человек",
@@ -133,7 +133,7 @@ export const sovietTanks: Tank[] = [
     year: "1939",
     country: "СССР",
     type: "Тяжёлый танк",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Kirovsk-1_Tanks_KV-1.jpg/1280px-Kirovsk-1_Tanks_KV-1.jpg",
+    image: "/img/205667ad-03e6-4943-bcb2-3dbe60e490e4.jpg",
     specs: {
       weight: "47.5 т",
       crew: "5 человек",
@@ -154,7 +154,7 @@ export const sovietTanks: Tank[] = [
     year: "1942",
     country: "СССР",
     type: "Лёгкий танк",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/T-70-Parola-1.jpg/1280px-T-70-Parola-1.jpg",
+    image: "/img/f213da31-5ee0-4e9b-bac5-9b437e0f3b82.jpg",
     specs: {
       weight: "9.2 т",
       crew: "2 человека",
@@ -175,7 +175,7 @@ export const sovietTanks: Tank[] = [
     year: "1943",
     country: "СССР",
     type: "Тяжёлый танк",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/IS-2_tank_2.jpg/1280px-IS-2_tank_2.jpg",
+    image: "/img/f6538513-e705-45f3-b1a1-274ebf8166ad.jpg",
     specs: {
       weight: "46 т",
       crew: "4 человека",
@@ -196,7 +196,7 @@ export const sovietTanks: Tank[] = [
     year: "1945",
     country: "СССР",
     type: "Тяжёлый танк",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IS-3_tank_Bovington_2007_1.jpg/1280px-IS-3_tank_Bovington_2007_1.jpg",
+    image: "/img/74fd2a2e-d4a6-4d05-958e-8a3229760a05.jpg",
     specs: {
       weight: "46.5 т",
       crew: "4 человека",
@@ -217,7 +217,7 @@ export const sovietTanks: Tank[] = [
     year: "1946",
     country: "СССР",
     type: "Средний танк",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/T-54_Model_1951_tank_-_Patriot_Museum%2C_Kubinka_%2838541752221%29.jpg/1280px-T-54_Model_1951_tank_-_Patriot_Museum%2C_Kubinka_%2838541752221%29.jpg",
+    image: "/img/59e7005d-d3a0-43bd-a383-5c2450d4556c.jpg",
     specs: {
       weight: "36 т",
       crew: "4 человека",
@@ -238,7 +238,7 @@ export const sovietTanks: Tank[] = [
     year: "1958",
     country: "СССР",
     type: "Средний танк",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/T-55_Model_1963_Iraq.jpg/1280px-T-55_Model_1963_Iraq.jpg",
+    image: "/img/0fcb8629-bb82-4bac-b051-c65f28aebbda.jpg",
     specs: {
       weight: "36 т",
       crew: "4 человека",
@@ -259,7 +259,7 @@ export const sovietTanks: Tank[] = [
     year: "1961",
     country: "СССР",
     type: "Основной боевой танк",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/T-62_Parola_tankmuseum_1.jpg/1280px-T-62_Parola_tankmuseum_1.jpg",
+    image: "/img/80b8535e-e388-4ce0-a875-a56fef6c2412.jpg",
     specs: {
       weight: "40 т",
       crew: "4 человека",
@@ -280,7 +280,7 @@ export const sovietTanks: Tank[] = [
     year: "1953",
     country: "СССР",
     type: "Тяжёлый танк",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/T-10_tank_Parola_tank_museum.jpg/1280px-T-10_tank_Parola_tank_museum.jpg",
+    image: "/img/836f5ae6-d97a-40b6-ae5a-e1279f0501e8.jpg",
     specs: {
       weight: "52 т",
       crew: "4 человека",
@@ -301,7 +301,7 @@ export const sovietTanks: Tank[] = [
     year: "1967",
     country: "СССР",
     type: "Основной боевой танк",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/T-64_Model_1972_Kubinka.jpg/1280px-T-64_Model_1972_Kubinka.jpg",
+    image: "/img/be50ef6c-381d-4e52-9537-173052252423.jpg",
     specs: {
       weight: "38 т",
       crew: "3 человека",
